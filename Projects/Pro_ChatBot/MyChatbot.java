@@ -1,9 +1,11 @@
-package Projects.Pro_ChatBot;
 
 import java.util.Scanner;
+import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import Projects.Pro_ChatBot.*;
+import Projects.*;
+import java.awt.Desktop;
+import java.net.URI;
 
 public class MyChatbot {
     public static void main(String[] args) {
@@ -129,8 +131,25 @@ public class MyChatbot {
                         System.out.println("Chatbot: What would you like to search for?");
                         String searchTerm = in.nextLine();
                         String formattedSearchTerm = searchTerm.replace(" ", "+");
-                        System.out.println("Chatbot: Here’s what I found for " + searchTerm
-                                + ": https://www.google.com/search?q=" + formattedSearchTerm);
+                        String url = "https://www.google.com/search?q=" + formattedSearchTerm;
+
+                        System.out.println("Chatbot: Opening the browser to search for " + searchTerm);
+
+                        // Open the default browser with the search URL
+                        if (Desktop.isDesktopSupported()) {
+                            try {
+                                Desktop desktop = Desktop.getDesktop();
+                                desktop.browse(new URI(url)); // Open the browser
+                            } catch (Exception e) {
+                                System.out.println(
+                                        "Chatbot: Unable to open browser. Please visit the following URL manually:");
+                                System.out.println(url);
+                            }
+                        } else {
+                            System.out.println(
+                                    "Chatbot: Desktop not supported. Please visit the following URL manually:");
+                            System.out.println(url);
+                        }
                         break;
 
                     // Thanks

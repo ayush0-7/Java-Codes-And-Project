@@ -9,11 +9,10 @@ class Lucky_Num {
         for (int i = 0; i < n; i++) {
             a[i] = i + 1;
         }
-        int cs=n;
+        int cs = n;
         int step = 2;
-        boolean r;
-        while (step <=cs) {
-            
+        while (step <= cs) {
+
             for (int i = step - 1; i < cs; i += step) {
                 // Shift elements left
                 for (int j = i; j < cs - 1; j++) {

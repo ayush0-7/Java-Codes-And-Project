@@ -5,7 +5,7 @@ public class consonants_follow_vowel {
         Scanner in = new Scanner(System.in);
         char a[] = new char[10];
         char b[] = new char[10];
-        System.out.println("Enter 10 no. in SDA");
+        System.out.println("Enter 10 letter in SDA");
         for (int i = 0; i < a.length; i++) {
             a[i] = in.next().charAt(0);
         }
