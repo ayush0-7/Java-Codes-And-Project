@@ -3,7 +3,6 @@ import java.util.Scanner;
 import java.net.URI;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
-import Projects.*;
 import java.awt.Desktop;
 import java.net.URI;
 
