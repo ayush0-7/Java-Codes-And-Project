@@ -10,7 +10,7 @@ public class LL {
             this.next = null;
         }
     }
-
+    // add first
     public void add_first(String data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -21,6 +21,7 @@ public class LL {
         head = newNode;
     }
 
+    //add last
     public void add_last(String data) {
         Node newNode = new Node(data);
         if (head == null) {
@@ -34,12 +35,45 @@ public class LL {
         currNode.next = newNode;
     }
 
-    public void deleteFirst(){
-        if (condition) {
-            
+    //Dlete first
+    public void deleteFirst() {
+        if (head == null) {
+            return;
         }
+        head = head.next;
     }
+    
+    //delete last
+    public void deleteLast(){
+        if (head == null) {
+            return;
+        }
+        Node secondLast = head;
+        Node last = head.next;
+        while (last.next != null) {
+            last = last.next;
+            secondLast = secondLast.next;
+        }
+        secondLast.next = null;
+        
 
+    }
+    
+    //Insertion at specifit position
+    public void specificInsert(String  data,int pos){
+        Node newNode = new Node(data);
+        if (pos ==0) {
+            newNode.next = head;
+            newNode = head;
+            return;
+        }
+        Node temp = head;
+        for (int i = 0; i < pos-1; i++) {
+            temp = temp.next;
+        }
+        newNode.next = temp.next;
+        temp.next = newNode;
+    }
     public void print() {
         if (head == null) {
             System.out.println("List is Null");
@@ -58,6 +92,11 @@ public class LL {
         ob.add_first("World");
         ob.add_first("Hello");
         ob.add_last("Ayush");
+        ob.add_last("Mishra");
+        ob.deleteFirst();
+        ob.deleteLast();
+        ob.specificInsert("Btech", 1);
         ob.print();
+        
     }
 }
