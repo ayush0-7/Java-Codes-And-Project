@@ -27,6 +27,7 @@ public class Search_an_Element {
         len++;
     }
 
+    // search 
     void Search(int ele) {
         if (head == null) {
             System.out.println("Not found");
@@ -42,7 +43,8 @@ public class Search_an_Element {
         }
         System.out.println("Not found");
     }
-
+    
+    // reverse 
     void Reverse() {
 
         if (head == null || head.next == null) {
@@ -60,21 +62,30 @@ public class Search_an_Element {
         head = prevNode;
     }
 
+    // Middle Element 
     void middle_ele() {
         if (head == null || head.next == null) {
             return;
         }
-        System.out.println("Length : "+len);
-        Node currNode = head;
-        for (int i = 0; i < len; i++) {
-            if (i == len/2) {
-                System.out.println("Middle Element : "+currNode.data);
-                break;
-            }
-            currNode = currNode.next;
+        // System.out.println("Length : "+len);
+        // Node currNode = head;
+        // for (int i = 0; i < len; i++) {
+        //     if (i == len/2) {
+        //         System.out.println("Middle Element : "+currNode.data);
+        //         break;
+        //     }
+        //     currNode = currNode.next;
+        // }
+        Node slow = head;
+        Node fast = head;
+        while (fast!=null && fast.next!=null) {
+            slow = slow.next;
+            fast = fast.next.next;
         }
+        System.out.println(slow.data);
     }
 
+    // Search from end 
     void searchfromEnd(int pos){
          if (head == null) {
              System.out.println("List is empty");
@@ -111,13 +122,15 @@ public class Search_an_Element {
 
     public static void main(String[] args) {
         Search_an_Element ob = new Search_an_Element();
-        for (int i = 0; i <= 9; i++) {
+        for (int i = 1; i <= 10; i++) {
             ob.add(i);
         }
         ob.Search(2);
         ob.Reverse();
         ob.print();
+        System.out.println("HI");
         ob.middle_ele();
         ob.searchfromEnd(2);
+        ob.print();
     }
 }

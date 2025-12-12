@@ -6,7 +6,7 @@ public class map_Basics {
         // put 
         mp.put("Ayush", 19); 
         mp.put("Ravi", 80); 
-        mp.put("Kartikey", 229); 
+        mp.put("Kartikay", 229); 
 
         // get 
         System.out.println(mp.get("Ayush"));
@@ -20,8 +20,8 @@ public class map_Basics {
         System.out.println(mp.containsKey("Ravi"));
 
         // put if it is not in the map 
-        mp.putIfAbsent("Shaily",18);
-        mp.putIfAbsent("Kartikey",15);
+        mp.putIfAbsent("Pan",18);
+        mp.putIfAbsent("Kartikay",15);
 
         // All keys in map 
         System.out.println(mp.keySet());
