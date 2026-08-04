@@ -15,7 +15,7 @@ public class x_Power_n_SH_logn {
     }
 
     public static void main(String args[]) {
-        int x = 2, n = 5;
+        int x = 2, n = -5;
         int output = printPower(x, n);
         System.out.println(output);
     }

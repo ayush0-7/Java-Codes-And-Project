@@ -1,21 +1,30 @@
 //Print x^n (with stack height = n)
 
+import java.util.Scanner;
+
 public class x_Power_n_SH_n {
-    int pow(int x,int n){
-        if (n==0) {
+    double pow(int x, int n) {
+        if (n == 0) {
             return 1;
         }
-        if (x==0) {
+        if (x == 0) {
             return 0;
         }
-        
-        int cp = pow(x, n-1);
-        int power = x * cp;
-        return power;
+        if (n < 0) {
+            return 1.0/pow(x, -n);
+        } else {
+           return x*pow(x, n-1);
+        }
     }
+
     public static void main(String[] args) {
         x_Power_n_SH_n ob = new x_Power_n_SH_n();
-        int s=ob.pow(2, 5);
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter x :");
+        int x = in.nextInt();
+        System.out.println("Enter n :");
+        int n = in.nextInt();
+        double s = ob.pow(x, n);
         System.out.println(s);
     }
 }
