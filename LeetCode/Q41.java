@@ -11,7 +11,16 @@ public class Q41 {
         while (mp.contains(k)) {
             k++;
         }
-        System.out.println(k);
+        for (int i : mp) {
+            if (i ==k) {
+                
+            }
+        }
+        ArrayList<Integer> li = new ArrayList<>();
+        if (li.) {
+            
+        }
+        System.out.println(mp.size());
 
     }
 }
