@@ -8,7 +8,7 @@ public class longest_substring {
             a[i]=-1;
         }
         while (r<s.length()) {
-            char c=s.charAt()
+            char c=s.charAt(l);
         }
     }
 }
