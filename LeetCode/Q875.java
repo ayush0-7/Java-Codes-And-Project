@@ -20,21 +20,20 @@ public class Q875 {
         int h = 8;
 
         int l = 1, r = max(a);
-        System.out.println(r);
         while (l <= r) {
             int mid = l + (r - l) / 2;
             int s = 0;
             for (int i = 0; i < a.length; i++) {
-                s += a[i] / mid;
+                s +=(int) (a[i] + mid-1 )/ mid;
+                System.out.println((int)Math.ceil((double)a[i]/mid)+"\t"+(int) (a[i] + mid-1 )/ mid);
             }
+            System.out.println("----");
             if (s <= h) {
-                r = r - mid;
+                r = mid -1;
             } else {
-                l += mid;
+                l =mid +1;
             }
-            l++;
-            r--;
         }
-        System.out.println(l);
+        System.out.println("Ans: "+l);
     }
 }
